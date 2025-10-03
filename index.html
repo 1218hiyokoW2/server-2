@@ -50,16 +50,16 @@
       </select>
     </label>
 
-    <table>
+    <table v-if="list">
       <tr>
         <th>時刻</th>
         <th>タイトル</th>
         <th>内容</th>
       </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr v-for="(program, idx) in list">
+        <td>{{formatTime(idx)}}</td>
+        <td>{{program.title}}</td>
+        <td>{{program.content}}</td>
       </tr>
     </table>
   </body>
