@@ -69,9 +69,15 @@
       return {
         // 変数（プロパティ）
         list: false,
-        apikey: 'biy29cYMsAudqkAHf8EHnzmNa1GMT4ju' // 自分で取得する
+        apikey: 'biy29cYMsAudqkAHf8EHnzmNa1GMT4ju', // 自分で取得する
 
         // 関数（メソッド）
+        async fetchData() {
+          const query = new URLSearchParams({
+            api: localStorage.APIKEY
+          });
+        },
+        const url =`https://api.nhk.or.jp/v2/pg/list/${this.area}/${this.service}/${this.date}.json`
       };
     }
   </script>
